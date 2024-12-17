@@ -1,0 +1,13 @@
+div{
+    border: 1px solid black;
+    width: 110px;
+    text-align: center;
+}
+
+div:hover{
+    cursor: pointer;
+    opacity: 0.6;
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}

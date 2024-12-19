@@ -1,0 +1,63 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#area{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    background: rgba(156, 28, 156, 0.89);
+    color: black;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+
+input{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+#oi{
+    border: 1px solid black;
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    
+}
+
+#caixa{
+    margin-left: 30px;
+}
+
+h1{
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+#res{
+    padding: 40px;
+    padding-bottom: 20px;
+}
+
+button{
+    margin-top: 30px;
+    position: relative;
+    left: 65px;
+}
+
+
+#quadrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}

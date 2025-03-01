@@ -17,8 +17,10 @@ for(var i = 0; i < paciente.length; i++){
     
     var altura = tdAltura.textContent;
     
-    if(peso < 0 || peso > 1000){
-        alert("Peso inválido")
+    if(peso <= 0 || peso >= 1000){
+        resultado.textContent = "Peso inválido"        
+        pacienteAtual.style.color = "red"
+        continue
     }
     
     

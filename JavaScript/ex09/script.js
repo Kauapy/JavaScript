@@ -11,7 +11,7 @@ for(var i = 0; i < paciente.length; i++){
     
     var tdAltura = pacienteAtual.querySelector(".info-altura");
     
-    var resultado = pacienteAtual.querySelector(".info-imc")
+    var resultado = pacienteAtual.querySelector(".info-imc");
     
     var peso = tdPeso.textContent;
     
@@ -23,10 +23,8 @@ for(var i = 0; i < paciente.length; i++){
         continue
     }
     
-    
     var imc = peso / (altura * altura);
     
     resultado.textContent = imc.toFixed(2);
 }    
-
 

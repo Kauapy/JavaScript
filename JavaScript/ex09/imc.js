@@ -22,9 +22,16 @@ for(var i = 0; i < paciente.length; i++){
         pacienteAtual.style.color = "red"
         continue
     }
+
+    if(altura <= 0 || altura >= 1000){
+        resultado.textContent = "Altura inválida"        
+        pacienteAtual.style.color = "red"
+        continue
+    }
     
     var imc = peso / (altura * altura);
     
     resultado.textContent = imc.toFixed(2);
 }    
 
+//função de calcular o IMC

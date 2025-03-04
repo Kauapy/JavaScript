@@ -9,10 +9,10 @@ botaoAdicionar.addEventListener("click", function(event){
    var formularioGordura = document.querySelector("#gordura").value;
 
 
-    var pacienteTr = document.createElement("tr");
+    var pacienteTr = document.createElement("tr"); //Criando Tr
 
     
-    var nomeTd = document.createElement("td");
+    var nomeTd = document.createElement("td");  // Criando Td
     var pesoTd = document.createElement("td");
     var alturaTd = document.createElement("td");
     var gorduraTd = document.createElement("td");
@@ -25,7 +25,7 @@ botaoAdicionar.addEventListener("click", function(event){
     imcTd.textContent = imc.toFixed(2);
 
 
-    pacienteTr.appendChild(nomeTd); 
+    pacienteTr.appendChild(nomeTd);  //Adicionando informações na tabela
     pacienteTr.appendChild(pesoTd); 
     pacienteTr.appendChild(alturaTd); 
     pacienteTr.appendChild(gorduraTd); 
@@ -36,3 +36,9 @@ botaoAdicionar.addEventListener("click", function(event){
     
     tabela.appendChild(pacienteTr);
 })
+
+
+
+
+
+//função de adicionar um paciente na tabela com interatividade do usuário

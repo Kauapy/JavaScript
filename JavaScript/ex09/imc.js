@@ -18,14 +18,14 @@ for(var i = 0; i < paciente.length; i++){
     var altura = tdAltura.textContent;
     
     if(peso <= 0 || peso >= 1000){
-        resultado.textContent = "Peso inválido"        
-        pacienteAtual.style.color = "red"
+        resultado.textContent = "Peso inválido";     
+        pacienteAtual.style.color = "red";
         continue
     }
 
     if(altura <= 0 || altura >= 1000){
-        resultado.textContent = "Altura inválida"        
-        pacienteAtual.style.color = "red"
+        resultado.textContent = "Altura inválida";   
+        pacienteAtual.style.color = "red";
         continue
     }
     

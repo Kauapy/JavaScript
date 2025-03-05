@@ -9,7 +9,10 @@ botaoAdicionar.addEventListener("click", function(event){
    var formularioGordura = document.querySelector("#gordura").value;
 
 
-    var pacienteTr = document.createElement("tr"); //Criando Tr
+   var imc = formularioPeso / (formularioAltura * formularioAltura);
+
+   var pacienteTr = document.createElement("tr"); // Criando Tr
+   pacienteTr.classList.add("paciente"); // Adicionando classe para manter o estilo
 
     
     var nomeTd = document.createElement("td");  // Criando Td
@@ -32,9 +35,13 @@ botaoAdicionar.addEventListener("click", function(event){
     pacienteTr.appendChild(imcTd); 
 
 
-    var tabela = document.querySelector("#tabela-pacientes")
+    var tabela = document.querySelector("#tabela-pacientes");
     
     tabela.appendChild(pacienteTr);
+
+    calcularIMC(pacienteTr);
+
+    document.querySelector("#form-adiciona").reset();
 })
 
 

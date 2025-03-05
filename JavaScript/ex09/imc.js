@@ -16,14 +16,17 @@ for(var i = 0; i < paciente.length; i++){
     var peso = tdPeso.textContent;
     
     var altura = tdAltura.textContent;
+
+    var pesoValido = validaPeso(peso);
+    var alturaValida = validaAltura(altura);
     
-    if(peso <= 0 || peso >= 1000){
+    if(!pesoValido){
         resultado.textContent = "Peso inválido";     
         pacienteAtual.style.color = "red";
         continue
     }
 
-    if(altura <= 0 || altura >= 1000){
+    if(!alturaValida){
         resultado.textContent = "Altura inválida";   
         pacienteAtual.style.color = "red";
         continue
@@ -33,5 +36,22 @@ for(var i = 0; i < paciente.length; i++){
     
     resultado.textContent = imc.toFixed(2);
 }    
+
+function validaPeso(peso){
+    if(peso >= 0 && peso < 1000){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+function validaAltura(altura){
+    if(altura >= 0 && altura <= 3.0){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 //função de calcular o IMC

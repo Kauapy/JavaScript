@@ -35,6 +35,7 @@ botaoAdicionar.addEventListener("click", function(event){
     pacienteTr.appendChild(imcTd); 
 
 
+
     var tabela = document.querySelector("#tabela-pacientes");
     
     tabela.appendChild(pacienteTr);
@@ -44,7 +45,9 @@ botaoAdicionar.addEventListener("click", function(event){
     document.querySelector("#form-adiciona").reset();
 })
 
-
+function validaPaciente(paciente){
+    
+}
 
 
 

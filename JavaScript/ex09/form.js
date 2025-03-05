@@ -14,7 +14,16 @@ botaoAdicionar.addEventListener("click", function(event){
    var pacienteTr = document.createElement("tr"); // Criando Tr
    pacienteTr.classList.add("paciente"); // Adicionando classe para manter o estilo
 
+    var erros = validaPaciente(paciente)
     
+
+
+    if(erros.length > 0){
+        var mensagemErro = document.querySelector(".mensagem-erro")
+        mensagemErro.textContent = erros;
+        return;
+   }
+ 
     var nomeTd = document.createElement("td");  // Criando Td
     var pesoTd = document.createElement("td");
     var alturaTd = document.createElement("td");
@@ -32,7 +41,7 @@ botaoAdicionar.addEventListener("click", function(event){
     pacienteTr.appendChild(pesoTd); 
     pacienteTr.appendChild(alturaTd); 
     pacienteTr.appendChild(gorduraTd); 
-    pacienteTr.appendChild(imcTd); 
+    pacienteTr.appendChild(imcTd);
 
 
 
@@ -46,7 +55,13 @@ botaoAdicionar.addEventListener("click", function(event){
 })
 
 function validaPaciente(paciente){
+
+    var erros = [];
     
+    if(!validaPeso(paciente.formularioPeso)) erros.push("Peso inválido!");
+    if(!validaAltura(paciente.formularioAltura)) erros.push(" Altura inválida!");
+
+    return erros;
 }
 
 

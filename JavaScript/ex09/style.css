@@ -140,7 +140,10 @@ button[disabled=disabled], button:disabled {
 	padding-bottom: 30px;
 }
 
-.mensagem-erro{
-	font-size: 30px;
+.mensagens-erro{
+	display: flex;
+	flex-direction: column;
+	font-size: 15px;
+	gap: 10px;
 	color: red;
 }

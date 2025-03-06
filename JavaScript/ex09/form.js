@@ -8,19 +8,23 @@ botaoAdicionar.addEventListener("click", function(event){
     var formularioAltura = document.querySelector("#altura").value;
    var formularioGordura = document.querySelector("#gordura").value;
 
+   var paciente = {
+    formularioNome: formularioNome,
+    formularioPeso: formularioPeso,
+    formularioAltura: formularioAltura,
+    formularioGordura: formularioGordura
+};
+
 
    var imc = formularioPeso / (formularioAltura * formularioAltura);
 
    var pacienteTr = document.createElement("tr"); // Criando Tr
    pacienteTr.classList.add("paciente"); // Adicionando classe para manter o estilo
 
-    var erros = validaPaciente(paciente)
+    var erros = validaPaciente(paciente);
     
-
-
     if(erros.length > 0){
-        var mensagemErro = document.querySelector(".mensagem-erro")
-        mensagemErro.textContent = erros;
+        exibeMensagemDeErro(erros);
         return;
    }
  
@@ -49,6 +53,10 @@ botaoAdicionar.addEventListener("click", function(event){
     
     tabela.appendChild(pacienteTr);
 
+    document.querySelector("#form-adiciona").reset();
+    var mensagensErro = document.querySelector(".mensagens-erro");
+    mensagensErro.innerHTML = ""; 
+
     calcularIMC(pacienteTr);
 
     document.querySelector("#form-adiciona").reset();
@@ -57,13 +65,35 @@ botaoAdicionar.addEventListener("click", function(event){
 function validaPaciente(paciente){
 
     var erros = [];
+
+    if (!paciente.formularioNome || paciente.formularioNome.length === 0) erros.push("Adicione o nome do paciente");
+ 
+    if (!paciente.formularioGordura || paciente.formularioGordura.length === 0) erros.push("Adicione o percentual de gordura do paciente");
     
-    if(!validaPeso(paciente.formularioPeso)) erros.push("Peso inválido!");
-    if(!validaAltura(paciente.formularioAltura)) erros.push(" Altura inválida!");
+    if(!paciente.formularioPeso || paciente.formularioPeso.length === 0) erros.push("Adicione o peso do paciente")
+    
+    if(!paciente.formularioAltura || paciente.formularioAltura.length === 0) erros.push("Adicione a altura do paciente")
+
+    if (!validaPeso(paciente.formularioPeso)) erros.push("Peso inválido!");
+
+    if (!validaAltura(paciente.formularioAltura)) erros.push("Altura inválida!");
+    
 
     return erros;
 }
 
+
+
+function exibeMensagemDeErro(erros){
+    var ul = document.querySelector(".mensagens-erro");
+    ul.innerHTML = "";
+
+    erros.forEach(function(erro){
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    })
+}
 
 
 //função de adicionar um paciente na tabela com interatividade do usuário

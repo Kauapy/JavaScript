@@ -16,6 +16,8 @@
     <main>
       <section class="container">
         <h2 class="titulo">Meus pacientes</h2>
+        <label for="filtrar-tabela">Filtrar:</label>
+        <input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente para busca" >
         <table>
           <thead>
             <tr>
@@ -59,12 +61,48 @@
               <td class="info-imc">0</td>
             </tr>
             <tr class="paciente">
-              <td class="info-nome">Tatiana</td>
-              <td class="info-peso">46</td>
+              <td class="info-nome">Neymar Jr</td>
+              <td class="info-peso">75</td>
+              <td class="info-altura">1.75</td>
+              <td class="info-gordura">11</td>
+              <td class="info-imc">0</td>
+            </tr>
+            <tr class="paciente">
+              <td class="info-nome">Messi</td>
+              <td class="info-peso">70</td>
               <td class="info-altura">1.55</td>
+              <td class="info-gordura">13</td>
+              <td class="info-imc">0</td>
+            </tr>
+            <tr class="paciente">
+              <td class="info-nome">Cristiano Jr</td>
+              <td class="info-peso">86</td>
+              <td class="info-altura">1.84</td>
+              <td class="info-gordura">16</td>
+              <td class="info-imc">0</td>
+            </tr>
+            <tr class="paciente">
+              <td class="info-nome">Vinicius</td>
+              <td class="info-peso">120</td>
+              <td class="info-altura">2.03</td>
               <td class="info-gordura">19</td>
               <td class="info-imc">0</td>
             </tr>
+            <tr class="paciente">
+              <td class="info-nome">Valverde</td>
+              <td class="info-peso">96</td>
+              <td class="info-altura">1.75</td>
+              <td class="info-gordura">15</td>
+              <td class="info-imc">0</td>
+            </tr>
+            <tr class="paciente">
+              <td class="info-nome">Aurora</td>
+              <td class="info-peso">66</td>
+              <td class="info-altura">1.55</td>
+              <td class="info-gordura">15</td>
+              <td class="info-imc">0</td>
+            </tr>
+            
           </tbody>
         </table>
       </section>
@@ -129,5 +167,6 @@
     <script src="imc.js"></script>
     <script src="form.js"></script>
     <script src="remover-pacientes.js"></script>
+    <script src="filtrar.js"></script>
   </body>
 </html>

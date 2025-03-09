@@ -9,9 +9,9 @@ campoFiltro.addEventListener("input", function() {
             var paciente = pacientes[i];
             var tdNome = paciente.querySelector(".info-nome");
             var nome = tdNome.textContent.toLowerCase(); 
-            var expressao = new RegExp(this.value);
+            var expressao = new RegExp(this.value, "i");
 
-            if (!nome.includes(filtro)) { 
+            if (!expressao.test(nome)) { 
                 paciente.classList.add("invisivel");
             } else {
                 paciente.classList.remove("invisivel");

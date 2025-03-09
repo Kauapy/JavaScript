@@ -18,7 +18,6 @@ botaoAdicionar.addEventListener("click", function(event){
 
    var imc = formularioPeso / (formularioAltura * formularioAltura);
 
-   var pacienteTr = document.createElement("tr"); // Criando Tr
    pacienteTr.classList.add("paciente"); // Adicionando classe para manter o estilo
 
     var erros = validaPaciente(paciente);
@@ -47,11 +46,7 @@ botaoAdicionar.addEventListener("click", function(event){
     pacienteTr.appendChild(gorduraTd); 
     pacienteTr.appendChild(imcTd);
 
-
-
-    var tabela = document.querySelector("#tabela-pacientes");
-    
-    tabela.appendChild(pacienteTr);
+   adicionaPacientesNaTabela(paciente);
 
     document.querySelector("#form-adiciona").reset();
     var mensagensErro = document.querySelector(".mensagens-erro");
@@ -61,6 +56,34 @@ botaoAdicionar.addEventListener("click", function(event){
 
     document.querySelector("#form-adiciona").reset();
 })
+
+
+function adicionaPacientesNaTabela(paciente) {
+    var pacienteTr = document.createElement("tr");
+    pacienteTr.classList.add("paciente");
+
+    var nomeTd = document.createElement("td");
+    var pesoTd = document.createElement("td");
+    var alturaTd = document.createElement("td");
+    var gorduraTd = document.createElement("td");
+    var imcTd = document.createElement("td");
+
+    nomeTd.textContent = paciente.nome;  // Corrigido para acessar a chave correta do JSON
+    pesoTd.textContent = paciente.peso;
+    alturaTd.textContent = paciente.altura;
+    gorduraTd.textContent = paciente.gordura;
+    imcTd.textContent = (paciente.peso / (paciente.altura * paciente.altura)).toFixed(2); 
+
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+    pacienteTr.appendChild(imcTd);
+
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
+
 
 function validaPaciente(paciente){
 

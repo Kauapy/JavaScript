@@ -1,4 +1,4 @@
-var botaoAdicionar = document.querySelector("#buscar-pacientes");
+var botaoAdicionar = document.querySelector("#buscar-paciente");
 
 botaoAdicionar.addEventListener("click", function(){
     console.log("Buscando Pacientes...");
@@ -8,8 +8,17 @@ botaoAdicionar.addEventListener("click", function(){
     xhr.open("GET", "https://raw.githubusercontent.com/loresgarcia/Pacientes-API/master/pacientes.json");
 
     xhr.addEventListener("load", function(){
-        console.log(xhr.responseText);
-    })
+        if (xhr.status === 200) {  
+            var resposta = xhr.responseText;
+            var pacientes = JSON.parse(resposta);
+
+            pacientes.forEach(function(paciente) {
+                adicionaPacientesNaTabela(paciente);
+            });
+        } else {
+            console.error("Erro ao buscar pacientes:", xhr.status);
+        }
+    });
 
     xhr.send();
 })

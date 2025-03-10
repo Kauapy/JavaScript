@@ -17,6 +17,9 @@ botaoAdicionar.addEventListener("click", function(){
             });
         } else {
             console.error("Erro ao buscar pacientes:", xhr.status);
+            var erro = document.querySelector("#erro-404");
+            erro.classList.remove("invisivel");
+            erro.style.color = "red";
         }
     });
 

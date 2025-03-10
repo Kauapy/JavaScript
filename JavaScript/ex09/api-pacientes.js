@@ -8,7 +8,9 @@ botaoAdicionar.addEventListener("click", function(){
     xhr.open("GET", "https://raw.githubusercontent.com/loresgarcia/Pacientes-API/master/pacientes.json");
 
     xhr.addEventListener("load", function(){
+        var erro = document.querySelector("#erro-404");
         if (xhr.status === 200) {  
+            erro.classList.add("invisivel");
             var resposta = xhr.responseText;
             var pacientes = JSON.parse(resposta);
 
@@ -17,7 +19,6 @@ botaoAdicionar.addEventListener("click", function(){
             });
         } else {
             console.error("Erro ao buscar pacientes:", xhr.status);
-            var erro = document.querySelector("#erro-404");
             erro.classList.remove("invisivel");
             erro.style.color = "red";
         }
